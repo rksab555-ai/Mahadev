@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FlightX</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  color:#fff;
+  background:
+  radial-gradient(circle at 50% 15%,#34364f,#15172b 50%,#080914);
+  min-height:100vh;
+}
+
+header{
+  height:75px;
+  padding:0 7%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(5,6,18,.7);
+}
+
+.logo{
+  font-size:28px;
+  font-weight:900;
+  font-style:italic;
+}
+
+.logo span,h1 span{
+  color:#ffd400;
+}
+
+.menu{
+  font-size:30px;
+}
+
+.hero{
+  text-align:center;
+  max-width:1000px;
+  margin:auto;
+  padding:60px 20px 80px;
+}
+
+.badge{
+  display:inline-block;
+  padding:10px 22px;
+  border-radius:30px;
+  border:1px solid #665900;
+  color:#ffd400;
+  font-weight:bold;
+  font-size:14px;
+  text-transform:uppercase;
+}
+
+.plane{
+  width:145px;
+  height:145px;
+  margin:40px auto;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:55px;
+  border:3px solid #e6c500;
+  background:radial-gradient(circle,#43bfdc,#17334f);
+}
+
+h1{
+  font-size:clamp(42px,7vw,76px);
+  line-height:1.05;
+  font-weight:900;
+}
+
+.subtitle{
+  max-width:700px;
+  margin:25px auto;
+  color:#c5c6d2;
+  font-size:18px;
+  line-height:1.8;
+}
+
+.button{
+  display:inline-block;
+  margin-top:15px;
+  padding:16px 40px;
+  border-radius:50px;
+  background:linear-gradient(135deg,#ffe100,#ffb900);
+  color:#111;
+  text-decoration:none;
+  font-weight:900;
+}
+
+.stats{
+  max-width:850px;
+  margin:60px auto 0;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.stat{
+  padding:25px 10px;
+  border-radius:18px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+}
+
+.number{
+  color:#ffd400;
+  font-size:34px;
+  font-weight:900;
+}
+
+.label{
+  margin-top:8px;
+  color:#9293a3;
+  font-size:12px;
+  text-transform:uppercase;
+}
+
+.features{
+  max-width:1000px;
+  margin:auto;
+  padding:0 20px 70px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.feature{
+  text-align:center;
+  padding:30px 20px;
+  border-radius:18px;
+  background:rgba(255,255,255,.04);
+}
+
+.feature h3{
+  color:#ffd400;
+  margin:12px 0;
+}
+
+.feature p{
+  color:#aaaaba;
+  line-height:1.6;
+}
+
+footer{
+  text-align:center;
+  padding:25px;
+  color:#666879;
+}
+
+@media(max-width:700px){
+  .stats,.features{
+    grid-template-columns:1fr;
+  }
+
+  h1{
+    font-size:44px;
+  }
+
+  .subtitle{
+    font-size:16px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">Flight<span>X</span></div>
+  <div class="menu">☰</div>
+</header>
+
+<section class="hero">
+
+  <div class="badge">
+    ✦ The Ultimate Aviation Experience
+  </div>
+
+  <div class="plane">✈️</div>
+
+  <h1>
+    Welcome to<br>
+    <span>FlightX</span>
+  </h1>
+
+  <p class="subtitle">
+    Experience the next generation of aviation gaming.
+    Discover exciting flight challenges and an immersive
+    aviation experience.
+  </p>
+
+  <a href="#features" class="button">
+    EXPLORE FLIGHTX
+  </a>
+
+  <div class="stats">
+
+    <div class="stat">
+      <div class="number">50K+</div>
+      <div class="label">Players</div>
+    </div>
+
+    <div class="stat">
+      <div class="number">24/7</div>
+      <div class="label">Updates</div>
+    </div>
+
+    <div class="stat">
+      <div class="number">100%</div>
+      <div class="label">Experience</div>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="features" id="features">
+
+  <div class="feature">
+    <div style="font-size:35px">✈️</div>
+    <h3>Flight Experience</h3>
+    <p>
+      Enjoy an aviation-inspired gaming environment.
+    </p>
+  </div>
+
+  <div class="feature">
+    <div style="font-size:35px">⚡</div>
+    <h3>Fast Gameplay</h3>
+    <p>
+      Smooth and responsive experience on mobile and desktop.
+    </p>
+  </div>
+
+  <div class="feature">
+    <div style="font-size:35px">🌎</div>
+    <h3>Play Anywhere</h3>
+    <p>
+      Access the FlightX experience from your device.
+    </p>
+  </div>
+
+</section>
+
+<footer>
+  © 2026 FlightX. All rights reserved.
+</footer>
+
+</body>
+</html>
