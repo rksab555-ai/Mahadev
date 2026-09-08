@@ -4,274 +4,1038 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>FlightX</title>
+<title>FlightX | Aviation Experience</title>
+<meta name="description" content="Discover FlightX, a next-generation aviation gaming experience.">
+
+<!-- =========================
+     META PIXEL
+========================= -->
+<script>
+!function(f,b,e,v,n,t,s)
+{
+  if(f.fbq)return;
+  n=f.fbq=function(){
+    n.callMethod ?
+    n.callMethod.apply(n,arguments) : n.queue.push(arguments)
+  };
+
+  if(!f._fbq)f._fbq=n;
+  n.push=n;
+  n.loaded=!0;
+  n.version='2.0';
+  n.queue=[];
+
+  t=b.createElement(e);
+  t.async=!0;
+  t.src=v;
+
+  s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)
+}
+(window, document, 'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '1611503443663858');
+fbq('track', 'PageView');
+</script>
+
+<noscript>
+<img
+  height="1"
+  width="1"
+  style="display:none"
+  src="https://www.facebook.com/tr?id=1611503443663858&ev=PageView&noscript=1"
+/>
+</noscript>
+<!-- END META PIXEL -->
+
 
 <style>
+
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
 }
 
-body{
-  font-family:Arial,sans-serif;
-  color:#fff;
-  background:
-  radial-gradient(circle at 50% 15%,#34364f,#15172b 50%,#080914);
-  min-height:100vh;
+html{
+  scroll-behavior:smooth;
 }
 
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  color:#fff;
+  background:#070b18;
+  overflow-x:hidden;
+}
+
+/* =========================
+   HEADER
+========================= */
+
 header{
-  height:75px;
+  width:100%;
+  height:76px;
   padding:0 7%;
   display:flex;
-  justify-content:space-between;
   align-items:center;
-  background:rgba(5,6,18,.7);
+  justify-content:space-between;
+
+  background:rgba(4,8,20,.88);
+  border-bottom:1px solid rgba(255,255,255,.08);
+
+  position:relative;
+  z-index:10;
 }
 
 .logo{
-  font-size:28px;
+  font-size:30px;
   font-weight:900;
   font-style:italic;
+  letter-spacing:-1px;
 }
 
-.logo span,h1 span{
+.logo span{
+  color:#ffd400;
+}
+
+.nav{
+  display:flex;
+  gap:35px;
+}
+
+.nav a{
+  color:#ddd;
+  text-decoration:none;
+  font-size:15px;
+  font-weight:600;
+  transition:.3s;
+}
+
+.nav a:hover{
   color:#ffd400;
 }
 
 .menu{
-  font-size:30px;
+  display:none;
+  font-size:28px;
 }
 
+
+/* =========================
+   HERO
+========================= */
+
 .hero{
+  min-height:650px;
+  padding:90px 20px 80px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
   text-align:center;
-  max-width:1000px;
-  margin:auto;
-  padding:60px 20px 80px;
+
+  background:
+    radial-gradient(
+      circle at 50% 15%,
+      #293c64 0%,
+      #121a35 42%,
+      #070b18 80%
+    );
+
+  position:relative;
+  overflow:hidden;
+}
+
+.hero:before{
+  content:"";
+  position:absolute;
+
+  width:600px;
+  height:600px;
+
+  background:rgba(0,183,255,.08);
+
+  border-radius:50%;
+
+  filter:blur(80px);
+}
+
+.hero-content{
+  max-width:900px;
+  position:relative;
+  z-index:2;
 }
 
 .badge{
   display:inline-block;
+
   padding:10px 22px;
+
   border-radius:30px;
-  border:1px solid #665900;
+
+  border:1px solid rgba(255,212,0,.45);
+
   color:#ffd400;
-  font-weight:bold;
-  font-size:14px;
+
+  font-size:13px;
+  font-weight:800;
+
   text-transform:uppercase;
+
+  letter-spacing:.5px;
+
+  background:rgba(255,212,0,.05);
 }
 
 .plane{
   width:145px;
   height:145px;
+
   margin:40px auto;
-  border-radius:50%;
+
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:55px;
-  border:3px solid #e6c500;
-  background:radial-gradient(circle,#43bfdc,#17334f);
+
+  border-radius:50%;
+
+  font-size:58px;
+
+  border:3px solid #e5c600;
+
+  background:
+    radial-gradient(
+      circle,
+      #43bfdc,
+      #17334f
+    );
+
+  box-shadow:
+    0 0 40px rgba(0,190,255,.22),
+    0 0 20px rgba(255,212,0,.15);
+
+  animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+
+  0%,100%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(-12px);
+  }
+
 }
 
 h1{
-  font-size:clamp(42px,7vw,76px);
-  line-height:1.05;
+  font-size:clamp(46px,8vw,82px);
+  line-height:1.02;
+
   font-weight:900;
+
+  letter-spacing:-2px;
+}
+
+h1 span{
+  color:#ffd400;
 }
 
 .subtitle{
-  max-width:700px;
+  max-width:680px;
+
   margin:25px auto;
-  color:#c5c6d2;
+
+  color:#c5c9d7;
+
   font-size:18px;
+
   line-height:1.8;
 }
 
 .button{
   display:inline-block;
+
   margin-top:15px;
-  padding:16px 40px;
+
+  padding:17px 42px;
+
   border-radius:50px;
-  background:linear-gradient(135deg,#ffe100,#ffb900);
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffe100,
+      #ffb900
+    );
+
   color:#111;
+
   text-decoration:none;
+
+  font-size:16px;
+
   font-weight:900;
-  box-shadow:0 8px 25px rgba(255,210,0,.25);
+
+  box-shadow:
+    0 10px 30px rgba(255,205,0,.25);
+
   transition:.3s;
 }
 
 .button:hover{
   transform:translateY(-3px);
-  box-shadow:0 12px 30px rgba(255,210,0,.4);
+
+  box-shadow:
+    0 14px 35px rgba(255,205,0,.4);
 }
 
+
+/* =========================
+   STATS
+========================= */
+
 .stats{
-  max-width:850px;
-  margin:60px auto 0;
+  max-width:900px;
+
+  margin:65px auto 0;
+
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:18px;
 }
 
 .stat{
-  padding:25px 10px;
+  padding:25px 15px;
+
   border-radius:18px;
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.08);
+
+  background:
+    rgba(255,255,255,.045);
+
+  border:
+    1px solid rgba(255,255,255,.08);
 }
 
 .number{
   color:#ffd400;
-  font-size:34px;
+
+  font-size:35px;
+
   font-weight:900;
 }
 
 .label{
   margin-top:8px;
-  color:#9293a3;
+
+  color:#999eaf;
+
   font-size:12px;
+
+  font-weight:700;
+
   text-transform:uppercase;
+
+  letter-spacing:.5px;
+}
+
+
+/* =========================
+   FEATURES
+========================= */
+
+.features-section{
+  padding:90px 20px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #0a1021,
+      #101a31
+    );
+}
+
+.section-title{
+  text-align:center;
+
+  font-size:42px;
+
+  font-weight:900;
+
+  margin-bottom:15px;
+}
+
+.section-title span{
+  color:#ffd400;
+}
+
+.section-subtitle{
+  max-width:650px;
+
+  margin:0 auto 50px;
+
+  text-align:center;
+
+  color:#9da4b7;
+
+  line-height:1.7;
 }
 
 .features{
-  max-width:1000px;
+  max-width:1050px;
+
   margin:auto;
-  padding:0 20px 70px;
+
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:22px;
 }
 
 .feature{
+  padding:35px 25px;
+
   text-align:center;
-  padding:30px 20px;
-  border-radius:18px;
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.06);
+
+  border-radius:20px;
+
+  background:
+    rgba(255,255,255,.045);
+
+  border:
+    1px solid rgba(255,255,255,.08);
+
+  transition:.3s;
+}
+
+.feature:hover{
+  transform:translateY(-6px);
+
+  border-color:
+    rgba(255,212,0,.3);
+}
+
+.icon{
+  font-size:42px;
+
+  margin-bottom:15px;
 }
 
 .feature h3{
   color:#ffd400;
-  margin:12px 0;
+
+  font-size:20px;
+
+  margin-bottom:12px;
 }
 
 .feature p{
-  color:#aaaaba;
-  line-height:1.6;
+  color:#aeb4c4;
+
+  line-height:1.7;
+
+  font-size:15px;
 }
+
+
+/* =========================
+   COMMUNITY
+========================= */
+
+.community{
+  padding:90px 20px;
+
+  text-align:center;
+
+  background:
+    radial-gradient(
+      circle at center,
+      #162b4b,
+      #070b18 70%
+    );
+}
+
+.community-box{
+  max-width:800px;
+
+  margin:auto;
+
+  padding:55px 25px;
+
+  border-radius:25px;
+
+  border:
+    1px solid rgba(255,255,255,.1);
+
+  background:
+    rgba(255,255,255,.035);
+}
+
+.community-box h2{
+  font-size:42px;
+
+  margin-bottom:18px;
+}
+
+.community-box h2 span{
+  color:#ffd400;
+}
+
+.community-box p{
+  max-width:600px;
+
+  margin:0 auto 25px;
+
+  color:#aeb5c7;
+
+  line-height:1.7;
+}
+
+
+/* =========================
+   INFO
+========================= */
+
+.info{
+  max-width:1050px;
+
+  margin:auto;
+
+  padding:70px 20px;
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:20px;
+}
+
+.info-card{
+  padding:30px;
+
+  text-align:center;
+
+  border-radius:18px;
+
+  background:
+    rgba(255,255,255,.035);
+
+  border:
+    1px solid rgba(255,255,255,.07);
+}
+
+.info-card h3{
+  margin:12px 0;
+
+  color:#fff;
+}
+
+.info-card p{
+  color:#9299ab;
+
+  line-height:1.6;
+
+  font-size:14px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
+  padding:35px 20px;
+
   text-align:center;
-  padding:25px;
-  color:#666879;
+
+  background:#040711;
+
+  border-top:
+    1px solid rgba(255,255,255,.07);
 }
 
+.footer-logo{
+  font-size:28px;
+
+  font-weight:900;
+
+  font-style:italic;
+
+  margin-bottom:15px;
+}
+
+.footer-logo span{
+  color:#ffd400;
+}
+
+.footer-links{
+  margin:15px 0;
+}
+
+.footer-links a{
+  color:#8f96a7;
+
+  text-decoration:none;
+
+  margin:0 10px;
+
+  font-size:13px;
+}
+
+.footer-links a:hover{
+  color:#ffd400;
+}
+
+.copyright{
+  color:#555c6d;
+
+  font-size:12px;
+
+  margin-top:18px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
 @media(max-width:700px){
-  .stats,.features{
-    grid-template-columns:1fr;
+
+  header{
+    padding:0 20px;
+  }
+
+  .nav{
+    display:none;
+  }
+
+  .menu{
+    display:block;
+  }
+
+  .hero{
+    padding:
+      70px 18px
+      65px;
+  }
+
+  .plane{
+    width:120px;
+    height:120px;
+
+    font-size:48px;
+
+    margin:30px auto;
   }
 
   h1{
-    font-size:44px;
+    font-size:46px;
+
+    letter-spacing:-1px;
   }
 
   .subtitle{
     font-size:16px;
   }
+
+  .button{
+    width:100%;
+    max-width:320px;
+
+    padding:16px 25px;
+  }
+
+  .stats{
+    grid-template-columns:1fr;
+
+    max-width:350px;
+
+    margin-top:45px;
+  }
+
+  .features{
+    grid-template-columns:1fr;
+
+    max-width:450px;
+  }
+
+  .section-title{
+    font-size:34px;
+  }
+
+  .community-box h2{
+    font-size:34px;
+  }
+
+  .info{
+    grid-template-columns:1fr;
+
+    max-width:450px;
+  }
+
 }
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media(max-width:380px){
+
+  h1{
+    font-size:40px;
+  }
+
+  .logo{
+    font-size:25px;
+  }
+
+}
+
 </style>
 </head>
 
+
 <body>
 
+
+<!-- =========================
+     HEADER
+========================= -->
+
 <header>
-  <div class="logo">Flight<span>X</span></div>
-  <div class="menu">☰</div>
+
+  <div class="logo">
+    Flight<span>X</span>
+  </div>
+
+  <nav class="nav">
+    <a href="#home">Home</a>
+    <a href="#features">Features</a>
+    <a href="#community">Community</a>
+    <a href="#support">Support</a>
+  </nav>
+
+  <div class="menu">
+    ☰
+  </div>
+
 </header>
 
-<section class="hero">
 
-  <div class="badge">
-    ✦ The Ultimate Aviation Experience
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+  <div class="hero-content">
+
+    <div class="badge">
+      ✦ The Ultimate Aviation Experience
+    </div>
+
+    <div class="plane">
+      ✈️
+    </div>
+
+    <h1>
+      Welcome to<br>
+      <span>FlightX</span>
+    </h1>
+
+    <p class="subtitle">
+      Experience a next-generation aviation gaming
+      environment with exciting challenges,
+      smooth gameplay and an active community.
+    </p>
+
+    <!-- TELEGRAM BUTTON -->
+
+    <a
+      href="https://t.me/+jWBzKdawdz1jN2U1"
+      class="button"
+      target="_blank"
+      rel="noopener noreferrer"
+      onclick="fbq('track', 'Lead');"
+    >
+      ✈️ JOIN TELEGRAM
+    </a>
+
+
+    <!-- STATS -->
+
+    <div class="stats">
+
+      <div class="stat">
+
+        <div class="number">
+          50K+
+        </div>
+
+        <div class="label">
+          Community Members
+        </div>
+
+      </div>
+
+
+      <div class="stat">
+
+        <div class="number">
+          24/7
+        </div>
+
+        <div class="label">
+          Updates & Support
+        </div>
+
+      </div>
+
+
+      <div class="stat">
+
+        <div class="number">
+          100%
+        </div>
+
+        <div class="label">
+          Experience
+        </div>
+
+      </div>
+
+    </div>
+
   </div>
 
-  <div class="plane">✈️</div>
+</section>
 
-  <h1>
-    Welcome to<br>
-    <span>FlightX</span>
-  </h1>
 
-  <p class="subtitle">
-    Experience the next generation of aviation gaming.
-    Discover exciting flight challenges and an immersive
-    aviation experience.
+
+<!-- =========================
+     FEATURES
+========================= -->
+
+<section class="features-section" id="features">
+
+  <h2 class="section-title">
+    Why Choose <span>FlightX?</span>
+  </h2>
+
+  <p class="section-subtitle">
+    Discover an aviation-inspired gaming experience
+    designed for mobile and desktop users.
   </p>
 
-  <!-- Telegram Button -->
-  <a
-    href="https://t.me/+EHQS7ghyDJU1MGRl"
-    class="button"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    JOIN TELEGRAM
-  </a>
 
-  <div class="stats">
+  <div class="features">
 
-    <div class="stat">
-      <div class="number">50K+</div>
-      <div class="label">Players</div>
+
+    <div class="feature">
+
+      <div class="icon">
+        ✈️
+      </div>
+
+      <h3>
+        Flight Experience
+      </h3>
+
+      <p>
+        Enjoy an aviation-inspired gaming
+        environment with exciting challenges.
+      </p>
+
     </div>
 
-    <div class="stat">
-      <div class="number">24/7</div>
-      <div class="label">Updates</div>
+
+    <div class="feature">
+
+      <div class="icon">
+        ⚡
+      </div>
+
+      <h3>
+        Smooth Gameplay
+      </h3>
+
+      <p>
+        Enjoy a responsive experience
+        across mobile and desktop devices.
+      </p>
+
     </div>
 
-    <div class="stat">
-      <div class="number">100%</div>
-      <div class="label">Experience</div>
+
+    <div class="feature">
+
+      <div class="icon">
+        🌎
+      </div>
+
+      <h3>
+        Play Anywhere
+      </h3>
+
+      <p>
+        Access the FlightX experience
+        from your preferred device.
+      </p>
+
     </div>
+
 
   </div>
 
 </section>
 
-<section class="features">
 
-  <div class="feature">
-    <div style="font-size:35px">✈️</div>
-    <h3>Flight Experience</h3>
-    <p>
-      Enjoy an aviation-inspired gaming environment.
-    </p>
-  </div>
 
-  <div class="feature">
-    <div style="font-size:35px">⚡</div>
-    <h3>Fast Gameplay</h3>
-    <p>
-      Smooth and responsive experience on mobile and desktop.
-    </p>
-  </div>
+<!-- =========================
+     COMMUNITY
+========================= -->
 
-  <div class="feature">
-    <div style="font-size:35px">🌎</div>
-    <h3>Play Anywhere</h3>
+<section class="community" id="community">
+
+  <div class="community-box">
+
+    <h2>
+      Join the <span>FlightX</span> Community
+    </h2>
+
     <p>
-      Access the FlightX experience from your device.
+      Connect with the FlightX community
+      and stay updated with the latest
+      news, announcements and updates.
     </p>
+
+    <a
+      href="https://t.me/+EHQS7ghyDJU1MGRL"
+      class="button"
+      target="_blank"
+      rel="noopener noreferrer"
+      onclick="fbq('track', 'Lead');"
+    >
+      ✈️ JOIN TELEGRAM
+    </a>
+
   </div>
 
 </section>
+
+
+
+<!-- =========================
+     INFORMATION
+========================= -->
+
+<section class="info" id="support">
+
+
+  <div class="info-card">
+
+    <div class="icon">
+      🎧
+    </div>
+
+    <h3>
+      Support
+    </h3>
+
+    <p>
+      Get updates and information
+      through our community channels.
+    </p>
+
+  </div>
+
+
+  <div class="info-card">
+
+    <div class="icon">
+      🔒
+    </div>
+
+    <h3>
+      Privacy
+    </h3>
+
+    <p>
+      We respect user privacy and
+      aim to provide a transparent experience.
+    </p>
+
+  </div>
+
+
+  <div class="info-card">
+
+    <div class="icon">
+      📱
+    </div>
+
+    <h3>
+      Mobile Friendly
+    </h3>
+
+    <p>
+      Designed to work smoothly
+      across modern mobile devices.
+    </p>
+
+  </div>
+
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
-  © 2026 FlightX. All rights reserved.
+
+  <div class="footer-logo">
+    Flight<span>X</span>
+  </div>
+
+
+  <div class="footer-links">
+
+    <a href="#">
+      Privacy Policy
+    </a>
+
+    <a href="#">
+      Terms & Conditions
+    </a>
+
+    <a href="https://t.me/+jWBzKdawdz1jN2U1"
+       target="_blank"
+       rel="noopener noreferrer">
+      Contact / Telegram
+    </a>
+
+  </div>
+
+
+  <div class="copyright">
+    © 2026 FlightX. All rights reserved.
+  </div>
+
 </footer>
+
 
 </body>
 </html>
