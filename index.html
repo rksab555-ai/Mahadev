@@ -98,6 +98,13 @@ h1{
   color:#111;
   text-decoration:none;
   font-weight:900;
+  box-shadow:0 8px 25px rgba(255,210,0,.25);
+  transition:.3s;
+}
+
+.button:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 30px rgba(255,210,0,.4);
 }
 
 .stats{
@@ -142,6 +149,7 @@ h1{
   padding:30px 20px;
   border-radius:18px;
   background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.06);
 }
 
 .feature h3{
@@ -202,8 +210,14 @@ footer{
     aviation experience.
   </p>
 
-  <a href="#features" class="button">
-    EXPLORE FLIGHTX
+  <!-- Telegram Button -->
+  <a
+    href="https://t.me/+jWBzKdawdz1jN2U1"
+    class="button"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    JOIN TELEGRAM
   </a>
 
   <div class="stats">
@@ -227,7 +241,7 @@ footer{
 
 </section>
 
-<section class="features" id="features">
+<section class="features">
 
   <div class="feature">
     <div style="font-size:35px">✈️</div>
